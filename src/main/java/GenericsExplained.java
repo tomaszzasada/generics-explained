@@ -17,65 +17,80 @@ public class GenericsExplained {
         Animal animal = new Animal();
         Object object = new Object();
 
+        // think of <Cat> as a range: <min;max> = <Cat;Cat>
         List<Cat> cats = new ArrayList<>();
+        // allows to add everything <= the min
         cats.add(null);
         cats.add(cat);
         cats.add(dog);
         cats.add(mammal);
         cats.add(animal);
         cats.add(object);
+        // allows to get everything >= the max
         cat = cats.get(0);
         dog = cats.get(0);
         mammal = cats.get(0);
         animal = cats.get(0);
         object = cats.get(0);
 
+        // think of <Dog> as a range: <min;max> = <Dog;Dog>
         List<Dog> dogs = new ArrayList<>();
+        // allows to add everything <= the min
         dogs.add(null);
         dogs.add(cat);
         dogs.add(dog);
         dogs.add(mammal);
         dogs.add(animal);
         dogs.add(object);
+        // allows to get everything >= the max
         cat = dogs.get(0);
         dog = dogs.get(0);
         mammal = dogs.get(0);
         animal = dogs.get(0);
         object = dogs.get(0);
 
+        // think of <Mammal> as a range: <min;max> = <Mammal;Mammal>
         List<Mammal> mammals = new ArrayList<>();
+        // allows to add everything <= the min
         mammals.add(null);
         mammals.add(cat);
         mammals.add(dog);
         mammals.add(mammal);
         mammals.add(animal);
         mammals.add(object);
+        // allows to get everything >= the max
         cat = mammals.get(0);
         dog = mammals.get(0);
         mammal = mammals.get(0);
         animal = mammals.get(0);
         object = mammals.get(0);
 
+        // think of <Animal> as a range: <min;max> = <Animal;Animal>
         List<Animal> animals = new ArrayList<>();
+        // allows to add everything <= the min
         animals.add(null);
         animals.add(cat);
         animals.add(dog);
         animals.add(mammal);
         animals.add(animal);
         animals.add(object);
+        // allows to get everything >= the max
         cat = animals.get(0);
         dog = animals.get(0);
         mammal = animals.get(0);
         animal = animals.get(0);
         object = animals.get(0);
 
+        // think of <Object> as a range: <min;max> = <Object;Object>
         List<Object> objects = new ArrayList<>();
+        // allows to add everything <= the min
         objects.add(null);
         objects.add(cat);
         objects.add(dog);
         objects.add(mammal);
         objects.add(animal);
         objects.add(object);
+        // allows to get everything >= the max
         cat = objects.get(0);
         dog = objects.get(0);
         mammal = objects.get(0);
