@@ -5,7 +5,7 @@ import java.util.List;
  * Look at compiler errors to get to know what is allowed and what is not.
  * Inheritance of classes:
  * null -> Cat\
- * Mammal -> Animal -> Object
+ *             Mammal -> Animal -> Object
  * null -> Dog/
  */
 public class GenericsExplained {
