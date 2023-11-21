@@ -90,6 +90,7 @@ public class GenericsExplained {
         objects.add(mammal);
         objects.add(animal);
         objects.add(object);
+
         // allows to get everything >= the max
         cat = objects.get(0);
         dog = objects.get(0);
@@ -97,52 +98,76 @@ public class GenericsExplained {
         animal = objects.get(0);
         object = objects.get(0);
 
-        get(cats);
-        get(dogs);
-        get(mammals);
-        get(animals);
-        get(objects);
+        extendsExample(cats);
+        extendsExample(dogs);
+        extendsExample(mammals);
+        extendsExample(animals);
+        extendsExample(objects);
 
-        put(cats);
-        put(dogs);
-        put(mammals);
-        put(animals);
-        put(objects);
+        superExample(cats);
+        superExample(dogs);
+        superExample(mammals);
+        superExample(animals);
+        superExample(objects);
+
+        unboundedExample(cats);
+        unboundedExample(dogs);
+        unboundedExample(mammals);
+        unboundedExample(animals);
+        unboundedExample(objects);
     }
 
     // think of <? extends Mammal> as a range: <min;max> = <null;Mammal>
-    private static void get(List<? extends Mammal> mammals) {
+    private static void extendsExample(List<? extends Mammal> elements) {
         // allows to get everything >= the max
-        Cat cat = mammals.get(0);
-        Dog dog = mammals.get(0);
-        Mammal mammal = mammals.get(0);
-        Animal animal = mammals.get(0);
-        Object object = mammals.get(0);
+        Cat cat = elements.get(0);
+        Dog dog = elements.get(0);
+        Mammal mammal = elements.get(0);
+        Animal animal = elements.get(0);
+        Object object = elements.get(0);
 
         // allows to add everything <= the min
-        mammals.add(null);
-        mammals.add(new Cat());
-        mammals.add(new Dog());
-        mammals.add(new Mammal());
-        mammals.add(new Animal());
-        mammals.add(new Object());
+        elements.add(null);
+        elements.add(new Cat());
+        elements.add(new Dog());
+        elements.add(new Mammal());
+        elements.add(new Animal());
+        elements.add(new Object());
     }
 
     // think of <? super Mammal>  as a range: <min;max> = <Mammal;Object>
-    private static void put(List<? super Mammal> mammals) {
+    private static void superExample(List<? super Mammal> elements) {
         // allows to get everything >= the max
-        Cat cat = mammals.get(0);
-        Dog dog = mammals.get(0);
-        Mammal mammal = mammals.get(0);
-        Animal animal = mammals.get(0);
-        Object object = mammals.get(0);
+        Cat cat = elements.get(0);
+        Dog dog = elements.get(0);
+        Mammal mammal = elements.get(0);
+        Animal animal = elements.get(0);
+        Object object = elements.get(0);
 
         // allows to add everything <= the min
-        mammals.add(null);
-        mammals.add(new Cat());
-        mammals.add(new Dog());
-        mammals.add(new Mammal());
-        mammals.add(new Animal());
-        mammals.add(new Object());
+        elements.add(null);
+        elements.add(new Cat());
+        elements.add(new Dog());
+        elements.add(new Mammal());
+        elements.add(new Animal());
+        elements.add(new Object());
+    }
+
+    // think of <?>  as a range: <min;max> = <null;Object>
+    private static void unboundedExample(List<?> elements) {
+        // allows to get everything >= the max
+        Cat cat = elements.get(0);
+        Dog dog = elements.get(0);
+        Mammal mammal = elements.get(0);
+        Animal animal = elements.get(0);
+        Object object = elements.get(0);
+
+        // allows to add everything <= the min
+        elements.add(null);
+        elements.add(new Cat());
+        elements.add(new Dog());
+        elements.add(new Mammal());
+        elements.add(new Animal());
+        elements.add(new Object());
     }
 }
